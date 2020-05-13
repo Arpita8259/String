@@ -1,0 +1,523 @@
+Q1.Write a c program for concatenation two strings:-
+
+#include <stdio.h>
+int concatenate(char [], char []);
+ 
+int main()
+{
+   char p[100], q[100];
+ 
+   printf("Input a string\n");
+   gets(p);
+ 
+   printf("Input a string to concatenate\n");
+   gets(q);
+ 
+   concatenate(p, q);
+ 
+   printf("String obtained on concatenation: \"%s\"\n", p);
+ 
+   return 0;
+}
+
+int concatenate(char p[], char q[])
+{
+   int c, d;
+   
+   c = 0;
+ 
+   while (p[c] != '\0') 
+   {
+      c++;      
+   }
+ 
+   d = 0;
+ 
+   while (q[d] != '\0') 
+   {
+      p[c] = q[d];
+      d++;
+      c++;    
+   }
+ 
+   p[c] = '\0';
+}
+
+
+
+
+OUTPUT:-
+
+Input a string:RCC                                                                                                                            
+Input a string to concatenate :IIT                                                                                                                            
+String obtained on concatenation: "RCCIIT" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q2. Write a c program to change the case of the characters in a string:-
+
+Upper case-
+
+#include <stdio.h>
+#include<conio.h>
+void upper_string(char []);
+int main()
+{
+   char string[100];
+    printf("Enter a string to convert it into upper case:\n");
+   gets(string);
+    upper_string(string);
+    printf("The string in upper case: %s\n", string);
+     return 0;
+}
+void upper_string(char s[]) 
+{
+   int c = 0;
+   while (s[c] != '\0')
+ {
+      if (s[c] >= 'a' && s[c] <= 'z')
+ {
+         s[c] = s[c] - 32;
+      }
+      c++;
+   }
+}
+
+
+
+
+
+Output:
+
+Enter a string to convert it into upper case: flower
+The string in upper case: FLOWER
+
+
+
+
+
+
+
+
+
+Lower case-
+
+
+#include <stdio.h>
+#include<conio.h>
+void lower_string(char []);
+int main()
+{
+   char string[100];
+     printf("Enter a string to convert it into lower case:\n");
+   gets(string);
+    lower_string(string);
+    printf("The string in lower case: %s\n", string);
+     return 0;
+}
+void lower_string(char s[])
+ {
+   int c = 0;
+   while (s[c] != '\0') 
+{
+      if (s[c] >= 'A' && s[c] <= 'Z')
+ {
+         s[c] = s[c] + 32;
+      }
+      c++;
+   }
+}
+      
+
+
+
+
+Output:
+
+Enter a string to convert it into lower case: ANIMALS
+The string in lower case: animals
+
+
+
+
+
+
+
+
+
+
+Q3.Write a C program for string copy
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+char source[1000], destination[1000];
+printf("input a string\n");
+gets(source);
+strcpy(destination,source);
+printf("source string:%s\n",source);
+printf("destination string:%s\n",destination);
+return 0;
+}
+
+
+Output:
+
+input a string
+
+Let’s go
+
+source string: Let’s go
+
+destination string: Let’s go
+
+
+
+Q4.WRITE A C PROGRAM TO INSERT AND DELETE CHARACTERS
+AT ANY PLACE OF THE STRING
+
+
+ #include <stdio.h> 
+#include <string.h> 
+void main() 
+{ 
+int I, j,n, count = 0, pos,pos1, flag = 0; 
+char s1[100], s2[1], s3[100]; 
+char *ptr1, *ptr2, *ptr3; 
+printf(“\nEnter the String:”); 
+gets(s1); 
+printf(“\n The entered string is :”); 
+puts(s1); 
+// INSERTION OF CHARACTERS 
+printf(“\nEnter the charecter to be inserted:”); 
+gets(s2); 
+printf(“\nEnter the position you like to insert:”); 
+scanf(“%d”, &pos); 
+ptr1 = s1; 
+ptr3 = s3; 
+for (I = 0, j = 0;*ptr1 != ‘\0’; ptr1++, i++, j++, ptr3++) 
+{ 
+S3[j] = s1[i]; 
+If (*ptr1 == ‘ ‘ && flag != 1) 
+++count; 
+If (flag != 1 && count == pos – 1) 
+{ 
+flag = 1; 
+for(ptr2 = s2;*ptr2 != ‘\0’; ptr2++) 
+{ 
+s3[++j] = *ptr2; 
+ptr3++; 
+} 
+s3[++j] = ‘ ‘; 
+ptr3++; 
+} 
+} 
+s3[j] = ‘\0’; 
+printf(“\nThe string after modification is\n\n %s\n”, s3); 
+// DELETION OF CHARACTERS 
+printf(“Enter the position from where to delete”); 
+scanf(“%d”,&pos1); 
+printf(“\n Enter the number of charecters to be deleted”); 
+scanf(“%d”, &n); 
+delchar(s1,n,pos1); 
+if((n+pos1-1)<=strlen(s1)) 
+{ 
+strcpy(&s1[pos1-1], &s1[n+pos1-1]; 
+puts(s1); 
+} 
+printf(“\nThe string after modification is\n\n %s\n”, s1); 
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q5. Write a c program for inserting words in a string. 
+Code:
+
+#include <stdio.h>
+#include <string.h>
+Void main()
+{
+    Int I, j, count = 0, pos, flag = 0;
+    Char s1[100], s2[10], s3[100];
+    Char *ptr1, *ptr2, *ptr3;
+    Printf(“\nenter the String:”);
+    Scanf(“ %[^\n]s”, s1);
+    Printf(“\nenter the string to be inserted:”);
+    Scanf(“ %[^\n]s”, s2);
+    Printf(“\nenter the position you like to insert:”);
+    Scanf(“%d”, &pos);
+    Ptr1 = s1;
+    Ptr3 = s3;
+    /*COPYING THE GIVEN STRING TO NEW ARRAY AND INSERTING THE STRING IN NEW ARRAY*/
+    For (I = 0, j = 0;*ptr1 != ‘\0’; ptr1++, i++, j++, ptr3++)
+    {
+        S3[j] = s1[i];
+        If (*ptr1 == ‘ ‘ && flag != 1)
+            ++count;
+        If (flag != 1 && count == pos – 1)
+        {
+            Flag = 1;
+            For(ptr2 = s2;*ptr2 != ‘\0’; ptr2++)
+            {
+                S3[++j] = *ptr2;
+                Ptr3++;
+            }
+            S3[++j] = ‘ ‘;
+            Ptr3++;
+        }
+    }
+    S3[j] = ‘\0’;
+    Printf(“\nthe string after modification is\n\n %s\n”, s3);
+}
+
+
+
+Output:
+Enter the String:Welcome to c programming class.
+Enter the string to be inserted:the
+Enter the position you like to insert:3
+The string after modification is
+ Welcome to the c programming class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q6. Write a C program for searching words in a string
+
+
+#include<stdio.h>
+#include<string.h>
+int compare(char w[10],char temp[10]);
+int main()
+{
+char w[10],s[1000],temp[10];
+int t=0,i,f;
+printf("\nenter sentence:");
+gets(s);
+printf("\nenter word to be searched:");
+scanf("%s",&w);
+for(i=0;i<strlen(s);i++)
+{
+if(s[i]==' ')
+{
+if(compare(temp,w)==1)
+{
+f=1;
+break;
+}
+else
+f=0;
+t=0;
+}
+else
+{
+temp[t]=s[i];
+t++;
+}
+}
+if(f==1)
+printf("\nword found");
+else
+printf("\nword not found");
+return 0;
+}
+int compare(char temp[10],char w[10])
+{
+int i,f;
+for(i=0;i<strlen(w);i++)
+{
+if(temp[i]==w[i])
+f=1;
+else
+{
+f=0;
+break;
+}
+}
+return f;
+}
+
+
+
+Output:
+
+Enter sentence: you can go now
+
+Enter word to be searched: go
+
+Word found
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q7.Write C programs for deleting words in a string
+
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+	char str[100], word[100], twoD[10][30];
+	int i = 0, j = 0, k = 0, len1 = 0, len2 = 0;
+	printf ("Enter the string:\n");
+	gets (str);
+	printf ("Enter the word to be removed:\n");
+	gets (word);
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] == ' ')
+		{
+			twoD[k][j] = '\0';
+			k ++;
+			j = 0;
+		}
+		else
+		{
+			twoD[k][j] = str[i];
+			j ++;
+		}
+	}
+	twoD[k][j] = '\0';
+	j = 0;
+	for (i = 0; i < k + 1; i++)
+	{
+		if (strcmp(twoD[i], word) == 0)
+            		          twoD[i][j] = '\0';
+		
+	}
+ 	j = 0;
+              for (i = 0; i < k + 1; i++)
+	{
+		if (twoD[i][j] == '\0')
+			continue;
+		else
+			printf ("%s ", twoD[i]);
+	}
+ 	printf ("\n");
+ 	return 0;
+}
+
+
+
+
+   Output:
+Enter the string:
+Hi, I am Jarvis 2.0
+Enter the word to be removed:
+2.0
+Hi I am Jarvis
